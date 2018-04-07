@@ -1,0 +1,20 @@
+{
+  "name": "ims",
+  "version": "1.0.0",
+  "description": "inventory management system",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "ejs": "^2.5.7",
+    "express": "^4.16.3",
+    "html-entities": "^1.2.1",
+    "json": "^9.0.6",
+    "mongoose": "^5.0.11",
+    "nodemon": "^1.17.2"
+  }
+}
