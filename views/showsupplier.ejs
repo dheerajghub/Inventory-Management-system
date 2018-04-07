@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+    <head>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">        </head>
+            <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <body>
+            <nav>
+                <div class="nav-wrapper blue">
+                  <a href="../index" class="brand-logo">IMS</a>
+                  <ul id="nav-mobile" class="right hide-on-med-and-down">
+                    <li><a href="../materials">Materials</a></li>
+                    <li><a href="../suppliers">Suppliers</a></li>
+                  </ul>
+                </div>
+              </nav>
+              <div class= "container"><br>
+                    <a href="../suppliers" class="btn green">Go Back</a>
+                    <ul class="collection">
+                            <li class="collection-item"><b>Supplier id</b><br><%= obj._id%></li>
+                            <li class="collection-item"><b>Company Name</b><br><%= obj.cmpname%></li>
+                            <li class="collection-item"><b>Email Id</b><br><%= obj.emailid%></li>
+                            <li class="collection-item"><b>Address</b><br><%= obj.address%></li>
+                            <li class="collection-item"><b>Contactno</b><br><%= obj.contactno%></li>
+                            <li class="collection-item"><b>State</b><br><%= obj.state%></li>
+                            <li class="collection-item"><b>Cost Price</b><br>$<%= obj.costprice%></li>
+                            <li class="collection-item"><b>Quantity</b><br><%= obj.qty%></li>
+                            <li class="collection-item"><b>Total expense</b><br>$&nbsp;<%= obj.costprice * obj.qty%></li>
+                            <li class="collection-item"><b>Created on</b><br><%= obj.created_on%></li>
+                    </ul>
+              </div>
+                  <script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>    
+    </body>
+</html>

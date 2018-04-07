@@ -1,0 +1,80 @@
+<!doctype html>
+<html>
+    <head>
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+            <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    </head>
+    <body>
+            <nav>
+                <div class="nav-wrapper blue">
+                  <a href="index" class="brand-logo">IMS</a>
+                  <ul id="nav-mobile" class="right hide-on-med-and-down">
+                    <li><a href="materials">Materials</a></li>
+                    <li><a href="suppliers">Suppliers</a></li>
+                  </ul>
+                </div>
+              </nav>
+              <div class="container"><br>
+                  <a href="/suppliers" class="btn green">Go Back</a>
+                  <form action="/addsupplier" method="POST">
+                        <div class="col s12 m6">
+                            <div class="card black-text text-darken-2">
+                                  <div class="card-content">
+                                    <h5 class="grey-text"><%= typeof msg !='undefined' ? msg : '' %></h5>
+                                    <span class="card-title blue-text">Add Supplier</span>
+                                        <div class="row">
+                                                <div class="input-field col s6">
+                                                <input id="text" type="text" name="cmpname">
+                                                <label for="text">Company Name</label>
+                                                </div>
+                                                <div class="input-field col s3">
+                                                <input id="text" type="text" name="materialname">
+                                                <label for="text">Material Name</label>
+                                                </div>
+                                                <div class="col s3">
+                                                <label>Qty</label>
+                                                <input type="number" placeholder="0" name="qty">
+                                                </div>
+                                        </div>
+                                        <div class="col s12 row">
+                                            <div class="col s6">
+                                                <label>Email Id</label>
+                                                <input type="email" placeholder="example@gmail.com" name="emailid">
+                                            </div>
+                                            <div class="col s3">
+                                                <label>Contact no.</label>
+                                                <input type="number" placeholder="1234567890" name="contactno">
+                                            </div>
+                                            <div class="col s3">
+                                                <label>Cost price</label>
+                                                <input type="number" placeholder="$0" name="costprice">
+                                            </div>
+                                        </div>
+                                        <div class="col s12 row">
+                                                <div class="input-field col s6">
+                                                        <textarea id="textarea1" class="materialize-textarea" name="address"></textarea>
+                                                        <label for="textarea1">Address</label>
+                                                </div>
+                                                <label>Material Type</label>
+                                                <select class="browser-default col s6" name="state">
+                                                    <option value="" disabled selected>choose type</option>
+                                                    <option value="solid">Solid</option>
+                                                    <option value="liquid">Liquid</option>
+                                                    <option value="gas">Gas</option>
+                                                </select>        
+                                        </div>
+                                        <input type="submit" class="btn blue" value="submit">
+                                  </div>
+                                </div>
+                              </div>
+                  </form>
+              </div>
+
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+    </body>
+</html>

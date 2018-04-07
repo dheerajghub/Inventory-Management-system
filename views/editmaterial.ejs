@@ -1,0 +1,62 @@
+<!doctype html>
+<html>
+    <head>
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+            <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    </head>
+    <body>
+            <nav>
+                <div class="nav-wrapper blue">
+                  <a href="../index" class="brand-logo">IMS</a>
+                  <ul id="nav-mobile" class="right hide-on-med-and-down">
+                    <li><a href="../materials">Materials</a></li>
+                    <li><a href="../suppliers">Suppliers</a></li>
+                  </ul>
+                </div>
+              </nav>
+              <div class="container"><br>
+                  <a href="../materials" class="btn green">Go Back</a>
+                  <form action="/editmaterial/<%= id %>" method="POST">
+                        <div class="col s12 m6">
+                            <div class="card black-text text-darken-2">
+                                  <div class="card-content">
+                                    <h5 class="grey-text"><%= typeof msg !='undefined' ? msg : '' %></h5>
+                                    <span class="card-title blue-text">Edit Material</span>
+                                    <div class="row">
+                                            <div class="input-field col s12">
+                                              <input id="text" type="text" name="name">
+                                              <label for="text">Material Name</label>
+                                            </div>
+                                        </div>
+                                        <label>Material Type</label>
+                                        <select class="browser-default" name="state">
+                                            <option value="" disabled selected>choose type</option>
+                                            <option value="solid">Solid</option>
+                                            <option value="liquid">Liquid</option>
+                                            <option value="gas">Gas</option>
+                                        </select><br>
+                                        <div class="col s12 row">
+                                            <div class="col s6">
+                                                <label>Price(per kg)</label>
+                                                <input type="number" placeholder="$0.0" name="price">
+                                            </div>
+                                            <div class="col s6">
+                                                <label>Quantity(unit(s))</label>
+                                                <input type="number" placeholder="0" name="qty">
+                                            </div>
+                                        </div>
+                                        <input type="submit" class="btn blue" value="submit">
+                                  </div>
+                                </div>
+                              </div>
+                  </form>
+              </div>
+
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+    </body>
+</html>

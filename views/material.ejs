@@ -1,0 +1,62 @@
+<!doctype html>
+<html>
+    <head>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">        </head>
+            <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <body>
+            <nav>
+                <div class="nav-wrapper blue">
+                  <a href="index" class="brand-logo">IMS</a>
+                  <ul id="nav-mobile" class="right hide-on-med-and-down">
+                    <li class="active"><a href="materials">Materials</a></li>
+                    <li><a href="suppliers">Suppliers</a></li>
+                  </ul>
+                </div>
+              </nav>
+              <div class= "container"><br>
+                    <a href="addmaterial" class="btn blue" >add material</a>
+                    <table class="striped">
+                            <thead>
+                              <tr>
+                                  <th>Name</th>
+                                  <th>State</th>
+                                  <th>Price(per-kg)</th>
+                                  <th>Quantity(unit(s))</th>
+                                  <th>created on</th>
+                                  <th></th>
+                              </tr>
+                            </thead>                    
+                            <tbody>
+                                <% obj.forEach(function(object){%>
+                                <tr>
+                                    <td><%= object.name %></td>
+                                    <td><%= object.state %></td>
+                                    <td>$&nbsp;<%= object.price %></td>
+                                    <td><%= object.qty %></td>
+                                    <td><%= object.created_on%></td>
+                                    <td>
+                                        <form action="/editmaterial/<%= object._id %>" method="GET">
+                                        <input type="submit" class="btn green" value="edit">
+                                        </form>
+                                    </td>
+                                    <td>
+                                        <form action="/deletematerial/<%= object._id %>" method="post">
+                                          <input type="submit" class="btn red" value="del">
+                                        </form>
+                                    </td>
+                                    <td>
+                                      <form action="/showmaterials/<%= object._id %>" method="post">
+                                        <input type="submit" class="btn blue" value="watch">
+                                      </form>
+                                   </td>
+                                </tr>
+                              <% });%>
+                            </tbody>
+                          </table><br><br>                  
+                 </div>
+                  <script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>    </body>
+</html>
